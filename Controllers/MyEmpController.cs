@@ -4,12 +4,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace CRUD_MVC_Demo_100524.Controllers
 {
     public class MyEmpController : Controller
     {
+        public ActionResult HomePage()
+        {
+            return View();
+        }
+        public ActionResult login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult login(tblLoginModel lm)
+        {
+            DB_EMP_100524Entities _dbContext = new DB_EMP_100524Entities();
+
+            if (ModelState.IsValid)
+            {
+                var lg = _dbContext.tblLogins.FirstOrDefault(x => x.userId == lm.userId && x.password == lm.password);
+                if (lg!= null)
+                {
+                    FormsAuthentication.SetAuthCookie(lm.userId, false);
+                    return RedirectToAction("Index");
+                }
+            }
+            return View();
+        }
+        public ActionResult logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("HomePage");
+        }
+        public ActionResult AboutUs()
+        {
+            return View();
+        }
         // GET: MyEmp
+        [Authorize]
         public ActionResult Index()
         {
             DB_EMP_100524Entities dbo=new DB_EMP_100524Entities();
@@ -18,7 +53,7 @@ namespace CRUD_MVC_Demo_100524.Controllers
             return View(emps);
         }
 
-        
+      
         public ActionResult AddEmp()
         {
             return View();

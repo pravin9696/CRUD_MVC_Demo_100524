@@ -11,6 +11,14 @@
     <title>Index</title>
 </head>
 <body>
+	<div>
+		@if (User.Identity.IsAuthenticated)
+		{
+			<h2>Welcome to :@User.Identity.Name</h2>
+			<br />
+			@Html.ActionLink("Log Out", "logout");
+		}
+	</div>
     <div> 
 		@Html.ActionLink("Click to Add Employee","AddEmp")
 		<table border="1">

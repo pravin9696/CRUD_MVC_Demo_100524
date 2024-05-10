@@ -1,0 +1,36 @@
+﻿@model CRUD_MVC_Demo_100524.Models.tblLoginModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>login</title>
+</head>
+<body>
+    <div> 
+        @using(Html.BeginForm()){
+			<table>
+				<tr><td>@Html.DisplayNameFor(x=>x.userId)</td>
+                    <td>@Html.TextBoxFor(x=>x.userId)</td>
+                    <td>@Html.ValidationMessageFor(x=>x.userId)</td>
+                </tr>
+				<tr>
+					<td>@Html.DisplayNameFor(x => x.password)</td>
+					<td>@Html.TextBoxFor(x => x.password)</td>
+					<td>@Html.ValidationMessageFor(x => x.password)</td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Login" /></td>
+					<td><input type="reset" value="Reset" /></td>
+					<td>@Html.ActionLink("Sing Up","SignUp","MyEmp")</td>
+				</tr>
+			</table>
+
+            }
+    </div>
+</body>
+</html>

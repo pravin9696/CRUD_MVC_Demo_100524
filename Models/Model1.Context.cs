@@ -26,5 +26,6 @@ namespace CRUD_MVC_Demo_100524.Models
         }
     
         public virtual DbSet<tblEmployee> tblEmployees { get; set; }
+        public virtual DbSet<tblLogin> tblLogins { get; set; }
     }
 }

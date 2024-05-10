@@ -137,6 +137,10 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblEmployeeModel.cs" />
+    <Compile Include="Models\tblLogin.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblLoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +162,9 @@
     <Content Include="Views\tblEmployees\Index.cshtml" />
     <Content Include="Views\MyEmp\Index.cshtml" />
     <Content Include="Views\MyEmp\AddEmp.cshtml" />
+    <Content Include="Views\MyEmp\login.cshtml" />
+    <Content Include="Views\MyEmp\AboutUs.cshtml" />
+    <Content Include="Views\MyEmp\HomePage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
