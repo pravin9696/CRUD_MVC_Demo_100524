@@ -1,0 +1,43 @@
+﻿@model CRUD_MVC_Demo_100524.Models.tblEmployeeModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddEmp</title>
+</head>
+<body>
+    <div> 
+                     @* action method, Controller name, method post/get  *@
+        @using (Html.BeginForm("AddEmp", "MyEmp", FormMethod.Post))
+            {
+		<table>
+			<tr>
+				<td>@Html.LabelFor(Model => Model.empName)</td>
+				<td>@Html.TextBoxFor(x => x.empName)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(Model => Model.dept)</td>
+				<td>@Html.TextBoxFor(x => x.dept)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>@Html.LabelFor(Model => Model.Salary)</td>
+				<td>@Html.TextBoxFor(x => x.Salary)</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="submit" /></td>
+				<td><input type="reset" value="Reset" /></td>
+				<td></td>
+			</tr>
+		</table>
+            }
+    </div>
+</body>
+</html>

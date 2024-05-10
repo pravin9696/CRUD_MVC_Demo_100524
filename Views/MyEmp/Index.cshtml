@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CRUD_MVC_Demo_100524.Models.tblEmployee>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+		@Html.ActionLink("Click to Add Employee","AddEmp")
+		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>Employee Name</th>
+				<th>Department</th>
+				<th>Salary</th>
+			</tr>
+			@foreach (var emp in Model)
+			{
+				<tr>
+					<td>@emp.id</td>
+					<td>@emp.empName</td>
+					<td>@emp.dept</td>
+					<td>@emp.Salary</td>
+				</tr>
+			}			
+		</table>
+    </div>
+</body>
+</html>
